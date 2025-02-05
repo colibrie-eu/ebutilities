@@ -1,0 +1,30 @@
+<ns2:CMRequest xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" xmlns:ns2="http://www.ebutilities.at/schemata/customerconsent/cmrequest/01p20">
+	<ns2:MarketParticipantDirectory DocumentMode="PROD" Duplicate="false" SchemaVersion="01.20">
+		<RoutingHeader xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20">
+			<Sender xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" AddressType="ECNumber">
+				<MessageAddress>EP1XXXXX</MessageAddress>
+			</Sender>
+			<Receiver xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" AddressType="ECNumber">
+				<MessageAddress>ATXXXXXX</MessageAddress>
+			</Receiver>
+			<DocumentCreationDateTime>2024-04-15T10:56:47</DocumentCreationDateTime>
+		</RoutingHeader>
+		<Sector>01</Sector>
+		<ns2:MessageCode>ANFORDERUNG_CCMO</ns2:MessageCode>
+	</ns2:MarketParticipantDirectory>
+	<ns2:ProcessDirectory>
+		<MessageId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</MessageId>
+		<ConversationId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ConversationId>
+		<ns2:ProcessDate>2024-04-15</ns2:ProcessDate>
+		<ns2:MeteringPoint>ATXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ns2:MeteringPoint>
+		<ns2:CMRequestId>NYMV3L3I</ns2:CMRequestId>
+		<CMRequest xmlns="http://www.ebutilities.at/schemata/customerconsent/cmrequest/01p20">
+			<ns2:ReqDatType>ECProfileData</ns2:ReqDatType>
+			<ns2:DateFrom>2024-05-01</ns2:DateFrom>
+			<ns2:DateTo>9999-12-31</ns2:DateTo>
+			<ns2:MeteringIntervall>QH</ns2:MeteringIntervall>
+			<ns2:TransmissionCycle>D</ns2:TransmissionCycle>
+			<ns2:EnergyDirection>CONSUMPTION</ns2:EnergyDirection>
+		</CMRequest>
+	</ns2:ProcessDirectory>
+</ns2:CMRequest>
