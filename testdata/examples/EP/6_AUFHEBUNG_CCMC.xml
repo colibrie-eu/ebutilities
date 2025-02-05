@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CMRevoke xmlns="http://www.ebutilities.at/schemata/customerconsent/cmrevoke/01p00" xmlns:ct="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ebutilities.at/schemata/customerconsent/cmrevoke/01p00 http://www.ebutilities.at/schemata/customerprocesses/CM_REV_CUS/01.00/AUFHEBUNG_CCMC">
+	<MarketParticipantDirectory DocumentMode="PROD" Duplicate="false" SchemaVersion="01.00">
+		<ct:RoutingHeader>
+			<ct:Sender AddressType="ECNumber">
+				<ct:MessageAddress>ATXXXXXX</ct:MessageAddress>
+			</ct:Sender>
+			<ct:Receiver AddressType="ECNumber">
+				<ct:MessageAddress>EP1XXXXX</ct:MessageAddress>
+			</ct:Receiver>
+			<ct:DocumentCreationDateTime>2023-08-22T12:53:20</ct:DocumentCreationDateTime>
+		</ct:RoutingHeader>
+		<ct:Sector>01</ct:Sector>
+		<MessageCode>AUFHEBUNG_CCMC</MessageCode>
+	</MarketParticipantDirectory>
+	<ProcessDirectory>
+		<ct:MessageId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ct:MessageId>
+		<ct:ConversationId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ct:ConversationId>
+		<ConsentId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ConsentId>
+		<MeteringPoint>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</MeteringPoint>
+		<ConsentEnd>2023-08-22</ConsentEnd>
+		<Reason>Aufhebung durch Kunden</Reason>
+	</ProcessDirectory>
+</CMRevoke>

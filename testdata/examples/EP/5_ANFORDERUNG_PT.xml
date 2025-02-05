@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ns2:CPRequest xmlns:ns2="http://www.ebutilities.at/schemata/customerprocesses/cprequest/01p12" xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20">
+	<ns2:MarketParticipantDirectory DocumentMode="PROD" Duplicate="false" SchemaVersion="01.12">
+		<RoutingHeader>
+			<Sender AddressType="ECNumber">
+				<MessageAddress>EP1XXXXX</MessageAddress>
+			</Sender>
+			<Receiver AddressType="ECNumber">
+				<MessageAddress>ATXXXXXX</MessageAddress>
+			</Receiver>
+			<DocumentCreationDateTime>2024-06-20T16:55:19</DocumentCreationDateTime>
+		</RoutingHeader>
+		<Sector>01</Sector>
+		<ns2:MessageCode>ANFORDERUNG_PT</ns2:MessageCode>
+	</ns2:MarketParticipantDirectory>
+	<ns2:ProcessDirectory>
+		<MessageId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</MessageId>
+		<ConversationId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ConversationId>
+		<ProcessDate>2024-06-20</ProcessDate>
+		<MeteringPoint>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</MeteringPoint>
+		<ns2:Extension>
+			<ns2:DateTimeFrom>2024-05-01T00:00:00+02:00</ns2:DateTimeFrom>
+			<ns2:DateTimeTo>2024-05-31T00:00:00+02:00</ns2:DateTimeTo>
+			<ns2:AssumptionOfCosts>false</ns2:AssumptionOfCosts>
+		</ns2:Extension>
+	</ns2:ProcessDirectory>
+</ns2:CPRequest>

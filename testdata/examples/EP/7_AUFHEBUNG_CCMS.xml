@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ns2:CMRevoke xmlns:ns2="http://www.ebutilities.at/schemata/customerconsent/cmrevoke/01p00" xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20">
+	<ns2:MarketParticipantDirectory DocumentMode="PROD" Duplicate="false" SchemaVersion="01.00">
+		<RoutingHeader>
+			<Sender AddressType="ECNumber">
+				<MessageAddress>EP1XXXXX</MessageAddress>
+			</Sender>
+			<Receiver AddressType="ECNumber">
+				<MessageAddress>ATXXXXXX</MessageAddress>
+			</Receiver>
+			<DocumentCreationDateTime>2024-04-15T10:48:17</DocumentCreationDateTime>
+		</RoutingHeader>
+		<Sector>01</Sector>
+		<ns2:MessageCode>AUFHEBUNG_CCMS</ns2:MessageCode>
+	</ns2:MarketParticipantDirectory>
+	<ns2:ProcessDirectory>
+		<MessageId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</MessageId>
+		<ConversationId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ConversationId>
+		<ns2:ConsentId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ns2:ConsentId>
+		<ns2:MeteringPoint>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ns2:MeteringPoint>
+		<ns2:ConsentEnd>2024-04-15</ns2:ConsentEnd>
+	</ns2:ProcessDirectory>
+</ns2:CMRevoke>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ns:CMRevoke xmlns:ns="http://www.ebutilities.at/schemata/customerconsent/cmrevoke/01p00" xmlns:ct="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" xmlns:po="http://xp.ponton.de/eda/v320" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ns:MarketParticipantDirectory DocumentMode="PROD" Duplicate="false" SchemaVersion="01.00">
+		<ct:RoutingHeader>
+			<ct:Sender AddressType="ECNumber">
+				<ct:MessageAddress>ATXXXXXX</ct:MessageAddress>
+			</ct:Sender>
+			<ct:Receiver AddressType="ECNumber">
+				<ct:MessageAddress>EP1XXXXX</ct:MessageAddress>
+			</ct:Receiver>
+			<ct:DocumentCreationDateTime>2023-10-20T09:48:53.573+02:00</ct:DocumentCreationDateTime>
+		</ct:RoutingHeader>
+		<ct:Sector>01</ct:Sector>
+		<ns:MessageCode>AUFHEBUNG_CCMI</ns:MessageCode>
+	</ns:MarketParticipantDirectory>
+	<ns:ProcessDirectory>
+		<ct:MessageId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ct:MessageId>
+		<ct:ConversationId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ct:ConversationId>
+		<ns:ConsentId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ns:ConsentId>
+		<ns:MeteringPoint>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ns:MeteringPoint>
+		<ns:ConsentEnd>2023-10-21+02:00</ns:ConsentEnd>
+		<ns:Reason>New MeteringData Consent created; Revoke old Conse</ns:Reason>
+	</ns:ProcessDirectory>
+</ns:CMRevoke>
