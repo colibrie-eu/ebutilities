@@ -1,0 +1,24 @@
+<ns2:CMNotification xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" xmlns:ns2="http://www.ebutilities.at/schemata/customerconsent/cmnotification/01p11">
+	<ns2:MarketParticipantDirectory DocumentMode="PROD" Duplicate="false" SchemaVersion="01.11">
+		<RoutingHeader xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20">
+			<Sender xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" AddressType="ECNumber">
+				<MessageAddress>ATXXXXXX</MessageAddress>
+			</Sender>
+			<Receiver xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" AddressType="ECNumber">
+				<MessageAddress>EPXXXXXX</MessageAddress>
+			</Receiver>
+			<DocumentCreationDateTime>2024-04-18T12:20:33.7215520Z</DocumentCreationDateTime>
+		</RoutingHeader>
+		<Sector>01</Sector>
+		<ns2:MessageCode>ANTWORT_CCMO</ns2:MessageCode>
+	</ns2:MarketParticipantDirectory>
+	<ns2:ProcessDirectory>
+		<MessageId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</MessageId>
+		<ConversationId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ConversationId>
+		<ns2:CMRequestId>NYMV3L3I</ns2:CMRequestId>
+		<ResponseData xmlns="http://www.ebutilities.at/schemata/customerconsent/cmnotification/01p11">
+			<MeteringPoint>ATXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</MeteringPoint>
+			<ResponseCode>99</ResponseCode>
+		</ResponseData>
+	</ns2:ProcessDirectory>
+</ns2:CMNotification>
