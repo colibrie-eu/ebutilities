@@ -1,0 +1,26 @@
+<ns2:CPRequest xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" xmlns:ns2="http://www.ebutilities.at/schemata/customerprocesses/cprequest/01p12">
+	<ns2:MarketParticipantDirectory DocumentMode="PROD" Duplicate="false" SchemaVersion="01.12">
+		<RoutingHeader xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20">
+			<Sender xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" AddressType="ECNumber">
+				<MessageAddress>EP1XXXXX</MessageAddress>
+			</Sender>
+			<Receiver xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" AddressType="ECNumber">
+				<MessageAddress>ATXXXXXX</MessageAddress>
+			</Receiver>
+			<DocumentCreationDateTime>2024-06-20T16:55:19</DocumentCreationDateTime>
+		</RoutingHeader>
+		<Sector>01</Sector>
+		<ns2:MessageCode>ANFORDERUNG_PT</ns2:MessageCode>
+	</ns2:MarketParticipantDirectory>
+	<ns2:ProcessDirectory>
+		<MessageId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</MessageId>
+		<ConversationId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ConversationId>
+		<ProcessDate>2024-06-20</ProcessDate>
+		<MeteringPoint>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</MeteringPoint>
+		<Extension xmlns="http://www.ebutilities.at/schemata/customerprocesses/cprequest/01p12">
+			<DateTimeFrom>2024-05-01T00:00:00+02:00</DateTimeFrom>
+			<DateTimeTo>2024-05-31T00:00:00+02:00</DateTimeTo>
+			<AssumptionOfCosts>false</AssumptionOfCosts>
+		</Extension>
+	</ns2:ProcessDirectory>
+</ns2:CPRequest>
