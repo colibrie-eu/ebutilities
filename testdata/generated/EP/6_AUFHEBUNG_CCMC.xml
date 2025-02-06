@@ -1,0 +1,23 @@
+<ns2:CMRevoke xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" xmlns:ns2="http://www.ebutilities.at/schemata/customerconsent/cmrevoke/01p00">
+	<ns2:MarketParticipantDirectory DocumentMode="PROD" Duplicate="false" SchemaVersion="01.00">
+		<RoutingHeader xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20">
+			<Sender xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" AddressType="ECNumber">
+				<MessageAddress>ATXXXXXX</MessageAddress>
+			</Sender>
+			<Receiver xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" AddressType="ECNumber">
+				<MessageAddress>EP1XXXXX</MessageAddress>
+			</Receiver>
+			<DocumentCreationDateTime>2023-08-22T12:53:20</DocumentCreationDateTime>
+		</RoutingHeader>
+		<Sector>01</Sector>
+		<ns2:MessageCode>AUFHEBUNG_CCMC</ns2:MessageCode>
+	</ns2:MarketParticipantDirectory>
+	<ns2:ProcessDirectory>
+		<MessageId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</MessageId>
+		<ConversationId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ConversationId>
+		<ns2:ConsentId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ns2:ConsentId>
+		<ns2:MeteringPoint>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ns2:MeteringPoint>
+		<ns2:ConsentEnd>2023-08-22</ns2:ConsentEnd>
+		<ns2:Reason>Aufhebung durch Kunden</ns2:Reason>
+	</ns2:ProcessDirectory>
+</ns2:CMRevoke>
