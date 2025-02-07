@@ -1,0 +1,19 @@
+---
+name: Release
+
+permissions:
+ contents: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag"
+        required: true
+        default: ""
+
+jobs:
+  audit:
+    uses: WattWiseAt/github-actions/.github/workflows/release.yaml@main
+    with:
+      tag: ${{ github.event.inputs.tag }}
