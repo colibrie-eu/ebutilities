@@ -5,8 +5,8 @@ import (
 	"encoding/xml"
 	"testing"
 
-	cmrevoke "github.com/WattWiseAt/ebutilities/models/customerconsent/cmrevoke/01p00"
-	"github.com/WattWiseAt/ebutilities/utils"
+	cmrevoke "github.com/colibrie-eu/ebutilities/models/customerconsent/cmrevoke/01p00"
+	"github.com/colibrie-eu/ebutilities/utils"
 	"github.com/mantyr/xmlutils"
 	"github.com/stretchr/testify/assert"
 )

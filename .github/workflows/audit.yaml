@@ -5,4 +5,4 @@ on: [push]
 
 jobs:
   audit:
-    uses: WattWiseAt/github-actions/.github/workflows/audit.yaml@main
+    uses: colibrie-eu/github-actions/.github/workflows/audit.yaml@main

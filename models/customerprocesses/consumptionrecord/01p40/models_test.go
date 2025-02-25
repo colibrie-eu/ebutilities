@@ -5,8 +5,8 @@ import (
 	"encoding/xml"
 	"testing"
 
-	consumptionrecord "github.com/WattWiseAt/ebutilities/models/customerprocesses/consumptionrecord/01p40"
-	"github.com/WattWiseAt/ebutilities/utils"
+	consumptionrecord "github.com/colibrie-eu/ebutilities/models/customerprocesses/consumptionrecord/01p40"
+	"github.com/colibrie-eu/ebutilities/utils"
 	"github.com/mantyr/xmlutils"
 	"github.com/stretchr/testify/assert"
 )

@@ -1,4 +1,4 @@
-module github.com/WattWiseAt/ebutilities
+module github.com/colibrie-eu/ebutilities
 
 go 1.23.5
 

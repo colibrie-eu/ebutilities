@@ -5,8 +5,8 @@ import (
 	"encoding/xml"
 	"testing"
 
-	cprequest "github.com/WattWiseAt/ebutilities/models/customerprocesses/cprequest/01p12"
-	"github.com/WattWiseAt/ebutilities/utils"
+	cprequest "github.com/colibrie-eu/ebutilities/models/customerprocesses/cprequest/01p12"
+	"github.com/colibrie-eu/ebutilities/utils"
 	"github.com/mantyr/xmlutils"
 	"github.com/stretchr/testify/assert"
 )

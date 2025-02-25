@@ -4,7 +4,7 @@ package cmnotification
 import (
 	"encoding/xml"
 
-	ct "github.com/WattWiseAt/ebutilities/models/customerprocesses/common/types/01p20"
+	ct "github.com/colibrie-eu/ebutilities/models/customerprocesses/common/types/01p20"
 )
 
 type CMNotification struct {

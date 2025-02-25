@@ -14,6 +14,6 @@ on:
 
 jobs:
   audit:
-    uses: WattWiseAt/github-actions/.github/workflows/release.yaml@main
+    uses: colibrie-eu/github-actions/.github/workflows/release.yaml@main
     with:
       tag: ${{ github.event.inputs.tag }}

@@ -5,8 +5,8 @@ import (
 	"encoding/xml"
 	"testing"
 
-	cmrequest "github.com/WattWiseAt/ebutilities/models/customerconsent/cmrequest/01p20"
-	"github.com/WattWiseAt/ebutilities/utils"
+	cmrequest "github.com/colibrie-eu/ebutilities/models/customerconsent/cmrequest/01p20"
+	"github.com/colibrie-eu/ebutilities/utils"
 	"github.com/mantyr/xmlutils"
 	"github.com/stretchr/testify/assert"
 )

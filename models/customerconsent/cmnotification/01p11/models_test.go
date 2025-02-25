@@ -5,8 +5,8 @@ import (
 	"encoding/xml"
 	"testing"
 
-	cmnotification "github.com/WattWiseAt/ebutilities/models/customerconsent/cmnotification/01p11"
-	"github.com/WattWiseAt/ebutilities/utils"
+	cmnotification "github.com/colibrie-eu/ebutilities/models/customerconsent/cmnotification/01p11"
+	"github.com/colibrie-eu/ebutilities/utils"
 	"github.com/mantyr/xmlutils"
 	"github.com/stretchr/testify/assert"
 )
