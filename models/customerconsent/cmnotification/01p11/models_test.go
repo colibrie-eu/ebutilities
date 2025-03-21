@@ -26,16 +26,16 @@ func TestResponseCCMO(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	var cmnotif cmnotification.CMNotification
+	var result cmnotification.CMNotification
 
-	err = xmlutils.Unmarshal(read, &cmnotif)
+	err = xmlutils.Unmarshal(read, &result)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	assertResponseCCMO(t, cmnotif)
+	assertResponseCCMO(t, result)
 
-	marshal, err := xml.MarshalIndent(cmnotif, "", "\t")
+	marshal, err := xml.MarshalIndent(result, "", "\t")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -50,26 +50,26 @@ func TestResponseCCMO(t *testing.T) {
 	}
 }
 
-func assertResponseCCMO(t *testing.T, cmnotif cmnotification.CMNotification) {
+func assertResponseCCMO(t *testing.T, result cmnotification.CMNotification) {
 	t.Helper()
 
-	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20", cmnotif.XMLNs)
-	assert.Equal(t, "http://www.ebutilities.at/schemata/customerconsent/cmnotification/01p11", cmnotif.XMLNs2)
-	assert.Equal(t, "PROD", string(cmnotif.MarketParticipantDirectory.DocumentMode))
-	assert.False(t, cmnotif.MarketParticipantDirectory.Duplicate)
-	assert.Equal(t, "01.11", cmnotif.MarketParticipantDirectory.SchemaVersion)
-	assert.Equal(t, "ECNumber", string(cmnotif.MarketParticipantDirectory.RoutingHeader.Sender.AddressType))
-	assert.Equal(t, "ATXXXXXX", string(cmnotif.MarketParticipantDirectory.RoutingHeader.Sender.MessageAddress))
-	assert.Equal(t, "ECNumber", string(cmnotif.MarketParticipantDirectory.RoutingHeader.Receiver.AddressType))
-	assert.Equal(t, "EPXXXXXX", string(cmnotif.MarketParticipantDirectory.RoutingHeader.Receiver.MessageAddress))
-	assert.Equal(t, "2024-04-18T12:20:33.7215520Z", cmnotif.MarketParticipantDirectory.RoutingHeader.DocumentCreationDateTime)
-	assert.Equal(t, "01", string(cmnotif.MarketParticipantDirectory.Sector))
-	assert.Equal(t, "ANTWORT_CCMO", string(cmnotif.MarketParticipantDirectory.MessageCode))
-	assert.Equal(t, "EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", string(cmnotif.ProcessDirectory.MessageID))
-	assert.Equal(t, "EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", string(cmnotif.ProcessDirectory.ConversationID))
-	assert.Equal(t, "NYMV3L3I", string(cmnotif.ProcessDirectory.CMRequestID))
-	assert.Nil(t, cmnotif.ProcessDirectory.ResponseData[0].ConsentID)
-	assert.Equal(t, "ATXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", string(*cmnotif.ProcessDirectory.ResponseData[0].MeteringPoint))
-	assert.Equal(t, 99, int(cmnotif.ProcessDirectory.ResponseData[0].ResponseCode[0]))
-	assert.Nil(t, cmnotif.ProcessDirectory.ResponseData[0].ParamHist)
+	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20", result.XMLNs)
+	assert.Equal(t, "http://www.ebutilities.at/schemata/customerconsent/cmnotification/01p11", result.XMLNs2)
+	assert.Equal(t, "PROD", string(result.MarketParticipantDirectory.DocumentMode))
+	assert.False(t, result.MarketParticipantDirectory.Duplicate)
+	assert.Equal(t, "01.11", result.MarketParticipantDirectory.SchemaVersion)
+	assert.Equal(t, "ECNumber", string(result.MarketParticipantDirectory.RoutingHeader.Sender.AddressType))
+	assert.Equal(t, "ATXXXXXX", string(result.MarketParticipantDirectory.RoutingHeader.Sender.MessageAddress))
+	assert.Equal(t, "ECNumber", string(result.MarketParticipantDirectory.RoutingHeader.Receiver.AddressType))
+	assert.Equal(t, "EPXXXXXX", string(result.MarketParticipantDirectory.RoutingHeader.Receiver.MessageAddress))
+	assert.Equal(t, "2024-04-18T12:20:33.7215520Z", result.MarketParticipantDirectory.RoutingHeader.DocumentCreationDateTime)
+	assert.Equal(t, "01", string(result.MarketParticipantDirectory.Sector))
+	assert.Equal(t, "ANTWORT_CCMO", string(result.MarketParticipantDirectory.MessageCode))
+	assert.Equal(t, "EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", string(result.ProcessDirectory.MessageID))
+	assert.Equal(t, "EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", string(result.ProcessDirectory.ConversationID))
+	assert.Equal(t, "NYMV3L3I", string(result.ProcessDirectory.CMRequestID))
+	assert.Nil(t, result.ProcessDirectory.ResponseData[0].ConsentID)
+	assert.Equal(t, "ATXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", string(*result.ProcessDirectory.ResponseData[0].MeteringPoint))
+	assert.Equal(t, 99, int(result.ProcessDirectory.ResponseData[0].ResponseCode[0]))
+	assert.Nil(t, result.ProcessDirectory.ResponseData[0].ParamHist)
 }
