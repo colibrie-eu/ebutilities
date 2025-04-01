@@ -1,19 +1,16 @@
 ---
 name: Release
 
+on:
+  push:
+    branches: [ dev ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ dev ]
+
 permissions:
  contents: write
-
-on:
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: "Tag"
-        required: true
-        default: ""
 
 jobs:
   audit:
     uses: colibrie-eu/github-actions/.github/workflows/release.yaml@main
-    with:
-      tag: ${{ github.event.inputs.tag }}
