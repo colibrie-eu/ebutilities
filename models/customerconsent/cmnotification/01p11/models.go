@@ -10,19 +10,19 @@ import (
 type CMNotification struct {
 	XMLNs string `xml:"xmlns,attr"`
 
-	XMLNs2 string `xml:"xmlns:ns2,attr"`
+	XMLNsCt string `xml:"xmlns:ct,attr"`
 
-	XMLName xml.Name `xml:"ns2:CMNotification"`
+	XMLName xml.Name `xml:"CMNotification"`
 
-	MarketParticipantDirectory MarketParticipantDirectory `xml:"ns2:MarketParticipantDirectory"`
+	MarketParticipantDirectory MarketParticipantDirectory `xml:"MarketParticipantDirectory"`
 
-	ProcessDirectory ProcessDirectory `xml:"ns2:ProcessDirectory"`
+	ProcessDirectory ProcessDirectory `xml:"ProcessDirectory"`
 }
 
 // XSD ComplexType declarations
 
 type MarketParticipantDirectory struct {
-	XMLName xml.Name `xml:"ns2:MarketParticipantDirectory"`
+	XMLName xml.Name
 
 	DocumentMode ct.DocumentMode `xml:"DocumentMode,attr"`
 
@@ -30,21 +30,21 @@ type MarketParticipantDirectory struct {
 
 	SchemaVersion string `xml:"SchemaVersion,attr"`
 
-	RoutingHeader ct.RoutingHeader `xml:"RoutingHeader"`
+	RoutingHeader ct.RoutingHeader `xml:"ct:RoutingHeader"`
 
-	Sector ct.Sector `xml:"Sector"`
+	Sector ct.Sector `xml:"ct:Sector"`
 
-	MessageCode ct.MessageCode `xml:"ns2:MessageCode"`
+	MessageCode ct.MessageCode `xml:"MessageCode"`
 }
 
 type ProcessDirectory struct {
-	XMLName xml.Name `xml:"ns2:ProcessDirectory"`
+	XMLName xml.Name
 
-	MessageID ct.GroupingID `xml:"MessageId"`
+	MessageID ct.GroupingID `xml:"ct:MessageId"`
 
-	ConversationID ct.GroupingID `xml:"ConversationId"`
+	ConversationID ct.GroupingID `xml:"ct:ConversationId"`
 
-	CMRequestID ct.GroupingID `xml:"ns2:CMRequestId"`
+	CMRequestID ct.GroupingID `xml:"CMRequestId"`
 
 	ResponseData []ResponseDataType `xml:"ResponseData"`
 }
@@ -52,7 +52,7 @@ type ProcessDirectory struct {
 type ResponseDataType struct {
 	XMLName xml.Name
 
-	ConsentID *ct.GroupingID `xml:"ConsentId"`
+	ConsentID *ct.GroupingID `xml:"ct:ConsentId"`
 
 	MeteringPoint *ct.MeteringPoint `xml:"MeteringPoint"`
 

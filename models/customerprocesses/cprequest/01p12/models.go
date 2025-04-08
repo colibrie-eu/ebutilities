@@ -10,13 +10,13 @@ import (
 type CPRequest struct {
 	XMLNs string `xml:"xmlns,attr"`
 
-	XMLNs2 string `xml:"xmlns:ns2,attr"`
+	XMLNsCt string `xml:"xmlns:ct,attr"`
 
-	XMLName xml.Name `xml:"ns2:CPRequest"`
+	XMLName xml.Name `xml:"CPRequest"`
 
-	MarketParticipantDirectory MarketParticipantDirectory `xml:"ns2:MarketParticipantDirectory"`
+	MarketParticipantDirectory MarketParticipantDirectory `xml:"MarketParticipantDirectory"`
 
-	ProcessDirectory ProcessDirectory `xml:"ns2:ProcessDirectory"`
+	ProcessDirectory ProcessDirectory `xml:"ProcessDirectory"`
 }
 
 // XSD ComplexType declarations
@@ -34,9 +34,9 @@ type Extension struct {
 
 	LoadProfileType *LoadProfileType `xml:"LoadProfileType"`
 
-	DateTimeFrom ct.DateTimeU `xml:"DateTimeFrom"`
+	DateTimeFrom *ct.DateTimeU `xml:"DateTimeFrom"`
 
-	DateTimeTo ct.DateTimeU `xml:"DateTimeTo"`
+	DateTimeTo *ct.DateTimeU `xml:"DateTimeTo"`
 
 	DisconnectionReason *DisconnectionReason `xml:"DisconnectionReason"`
 
@@ -46,7 +46,7 @@ type Extension struct {
 }
 
 type MarketParticipantDirectory struct {
-	XMLName xml.Name `xml:"ns2:MarketParticipantDirectory"`
+	XMLName xml.Name
 
 	DocumentMode ct.DocumentMode `xml:"DocumentMode,attr"`
 
@@ -54,29 +54,29 @@ type MarketParticipantDirectory struct {
 
 	SchemaVersion string `xml:"SchemaVersion,attr"`
 
-	RoutingHeader ct.RoutingHeader `xml:"RoutingHeader"`
+	RoutingHeader ct.RoutingHeader `xml:"ct:RoutingHeader"`
 
-	Sector ct.Sector `xml:"Sector"`
+	Sector ct.Sector `xml:"ct:Sector"`
 
-	MessageCode ct.MessageCode `xml:"ns2:MessageCode"`
+	MessageCode ct.MessageCode `xml:"MessageCode"`
 }
 
 type ProcessDirectory struct {
-	XMLName xml.Name `xml:"ns2:ProcessDirectory"`
+	XMLName xml.Name
 
-	MessageID ct.GroupingID `xml:"MessageId"`
+	MessageID ct.GroupingID `xml:"ct:MessageId"`
 
-	ConversationID ct.GroupingID `xml:"ConversationId"`
+	ConversationID ct.GroupingID `xml:"ct:ConversationId"`
 
-	ProcessDate string `xml:"ProcessDate"`
+	ProcessDate string `xml:"ct:ProcessDate"`
 
-	MeteringPoint ct.MeteringPoint `xml:"MeteringPoint"`
+	MeteringPoint ct.MeteringPoint `xml:"ct:MeteringPoint"`
 
-	Extension Extension `xml:"Extension"`
+	Extension *Extension `xml:"Extension"`
 
-	AdditionalData []ct.AdditionalData `xml:"AdditionalData"`
+	AdditionalData []ct.AdditionalData `xml:"ct:AdditionalData"`
 
-	VerificationDocument *ct.VerificationDocument `xml:"VerificationDocument"`
+	VerificationDocument *ct.VerificationDocument `xml:"ct:VerificationDocument"`
 }
 
 // XSD SimpleType declarations

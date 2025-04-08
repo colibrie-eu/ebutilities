@@ -10,19 +10,19 @@ import (
 type CMRevoke struct {
 	XMLNs string `xml:"xmlns,attr"`
 
-	XMLNs2 string `xml:"xmlns:ns2,attr"`
+	XMLNsCt string `xml:"xmlns:ct,attr"`
 
-	XMLName xml.Name `xml:"ns2:CMRevoke"`
+	XMLName xml.Name `xml:"CMRevoke"`
 
-	MarketParticipantDirectory MarketParticipantDirectory `xml:"ns2:MarketParticipantDirectory"`
+	MarketParticipantDirectory MarketParticipantDirectory `xml:"MarketParticipantDirectory"`
 
-	ProcessDirectory ProcessDirectory `xml:"ns2:ProcessDirectory"`
+	ProcessDirectory ProcessDirectory `xml:"ProcessDirectory"`
 }
 
 // XSD ComplexType declarations
 
 type MarketParticipantDirectory struct {
-	XMLName xml.Name `xml:"ns2:MarketParticipantDirectory"`
+	XMLName xml.Name
 
 	DocumentMode ct.DocumentMode `xml:"DocumentMode,attr"`
 
@@ -30,27 +30,27 @@ type MarketParticipantDirectory struct {
 
 	SchemaVersion string `xml:"SchemaVersion,attr"`
 
-	RoutingHeader ct.RoutingHeader `xml:"RoutingHeader"`
+	RoutingHeader ct.RoutingHeader `xml:"ct:RoutingHeader"`
 
-	Sector ct.Sector `xml:"Sector"`
+	Sector ct.Sector `xml:"ct:Sector"`
 
-	MessageCode string `xml:"ns2:MessageCode"`
+	MessageCode string `xml:"MessageCode"`
 }
 
 type ProcessDirectory struct {
-	XMLName xml.Name `xml:"ns2:ProcessDirectory"`
+	XMLName xml.Name
 
-	MessageID ct.GroupingID `xml:"MessageId"`
+	MessageID ct.GroupingID `xml:"ct:MessageId"`
 
-	ConversationID ct.GroupingID `xml:"ConversationId"`
+	ConversationID ct.GroupingID `xml:"ct:ConversationId"`
 
-	ConsentID ct.GroupingID `xml:"ns2:ConsentId"`
+	ConsentID ct.GroupingID `xml:"ConsentId"`
 
-	MeteringPoint ct.MeteringPoint `xml:"ns2:MeteringPoint"`
+	MeteringPoint ct.MeteringPoint `xml:"MeteringPoint"`
 
-	ConsentEnd string `xml:"ns2:ConsentEnd"`
+	ConsentEnd string `xml:"ConsentEnd"`
 
-	Reason ReasonType `xml:"ns2:Reason"`
+	Reason *ReasonType `xml:"Reason"`
 }
 
 // XSD SimpleType declarations

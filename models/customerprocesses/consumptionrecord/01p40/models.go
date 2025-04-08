@@ -10,19 +10,19 @@ import (
 type ConsumptionRecord struct {
 	XMLNs string `xml:"xmlns,attr"`
 
-	XMLNs2 string `xml:"xmlns:ns2,attr"`
+	XMLNsCt string `xml:"xmlns:ct,attr"`
 
-	XMLName xml.Name `xml:"ns2:ConsumptionRecord"`
+	XMLName xml.Name `xml:"ConsumptionRecord"`
 
-	MarketParticipantDirectory MarketParticipantDirectory `xml:"ns2:MarketParticipantDirectory"`
+	MarketParticipantDirectory MarketParticipantDirectory `xml:"MarketParticipantDirectory"`
 
-	ProcessDirectory ProcessDirectory `xml:"ns2:ProcessDirectory"`
+	ProcessDirectory ProcessDirectory `xml:"ProcessDirectory"`
 }
 
 // XSD ComplexType declarations
 
 type MarketParticipantDirectory struct {
-	XMLName xml.Name `xml:"ns2:MarketParticipantDirectory"`
+	XMLName xml.Name
 
 	DocumentMode ct.DocumentMode `xml:"DocumentMode,attr"`
 
@@ -30,27 +30,27 @@ type MarketParticipantDirectory struct {
 
 	SchemaVersion string `xml:"SchemaVersion,attr"`
 
-	RoutingHeader ct.RoutingHeader `xml:"RoutingHeader"`
+	RoutingHeader ct.RoutingHeader `xml:"ct:RoutingHeader"`
 
-	Sector ct.Sector `xml:"Sector"`
+	Sector ct.Sector `xml:"ct:Sector"`
 
-	MessageCode ct.MessageCode `xml:"ns2:MessageCode"`
+	MessageCode ct.MessageCode `xml:"MessageCode"`
 }
 
 type ProcessDirectory struct {
-	XMLName xml.Name `xml:"ns2:ProcessDirectory"`
+	XMLName xml.Name
 
-	MessageID ct.GroupingID `xml:"MessageId"`
+	MessageID ct.GroupingID `xml:"ct:MessageId"`
 
-	ConversationID ct.GroupingID `xml:"ConversationId"`
+	ConversationID ct.GroupingID `xml:"ct:ConversationId"`
 
-	ProcessDate string `xml:"ProcessDate"`
+	ProcessDate string `xml:"ct:ProcessDate"`
 
-	ECID *ct.MeteringPoint `xml:"ECID"`
+	ECID *ct.MeteringPoint `xml:"ct:ECID"`
 
-	DeliveryPoint *ct.MessageAddress `xml:"DeliveryPoint"`
+	DeliveryPoint *ct.MessageAddress `xml:"ct:DeliveryPoint"`
 
-	MeteringPoint ct.MeteringPoint `xml:"MeteringPoint"`
+	MeteringPoint ct.MeteringPoint `xml:"ct:MeteringPoint"`
 
 	Energy []Energy `xml:"Energy"`
 }
@@ -78,7 +78,7 @@ type EnergyData struct {
 
 	UOM UOMType `xml:"UOM,attr"`
 
-	Ep []EnergyPosition `xml:",any"`
+	EP []EnergyPosition `xml:",any"`
 }
 
 type EnergyPosition struct {
@@ -99,13 +99,13 @@ type BillingQuantity float64
 
 type Competence string
 
-type ConRecMessageCode string
+type ConsumptionRecordMessageCode string
 
-const ConRecMessageCodeDatenMsg ConRecMessageCode = "DATEN_MSG"
+const ConsumptionRecordMessageCodeDatenMsg ConsumptionRecordMessageCode = "DATEN_MSG"
 
-type ConRecVersion string
+type ConsumptionRecordVersion string
 
-const ConRecVersion0140 ConRecVersion = "01.40"
+const ConsumptionRecordVersion0140 ConsumptionRecordVersion = "01.40"
 
 type Email string
 
@@ -161,61 +161,61 @@ type ReferenceNumber string
 
 type UOMType string
 
-const UomtypeProz UOMType = "PROZ"
+const UOMTypeProz UOMType = "PROZ"
 
-const UomtypeCels UOMType = "CELS"
+const UOMTypeCels UOMType = "CELS"
 
-const UomtypePce UOMType = "PCE"
+const UOMTypePce UOMType = "PCE"
 
-const UomtypeEur UOMType = "EUR"
+const UOMTypeEur UOMType = "EUR"
 
-const UomtypeMb UOMType = "MB"
+const UOMTypeMb UOMType = "MB"
 
-const UomtypeGb UOMType = "GB"
+const UOMTypeGb UOMType = "GB"
 
-const UomtypeTb UOMType = "TB"
+const UOMTypeTb UOMType = "TB"
 
-const UomtypeH UOMType = "H"
+const UOMTypeH UOMType = "H"
 
-const UomtypeTag UOMType = "TAG"
+const UOMTypeTag UOMType = "TAG"
 
-const UomtypeMin UOMType = "MIN"
+const UOMTypeMin UOMType = "MIN"
 
-const UomtypeMon UOMType = "MON"
+const UOMTypeMon UOMType = "MON"
 
-const UomtypeKvarh UOMType = "KVARH"
+const UOMTypeKvarh UOMType = "KVARH"
 
-const UomtypeMvarh UOMType = "MVARH"
+const UOMTypeMvarh UOMType = "MVARH"
 
-const UomtypeKwt UOMType = "KWT"
+const UOMTypeKwt UOMType = "KWT"
 
-const UomtypeMwt UOMType = "MWT"
+const UOMTypeMwt UOMType = "MWT"
 
-const UomtypeGwt UOMType = "GWT"
+const UOMTypeGwt UOMType = "GWT"
 
-const UomtypeKwh UOMType = "KWH"
+const UOMTypeKwh UOMType = "KWH"
 
-const UomtypeMwh UOMType = "MWH"
+const UOMTypeMwh UOMType = "MWH"
 
-const UomtypeGwh UOMType = "GWH"
+const UOMTypeGwh UOMType = "GWH"
 
-const UomtypeLe UOMType = "LE"
+const UOMTypeLe UOMType = "LE"
 
-const UomtypeM2 UOMType = "M2"
+const UOMTypeM2 UOMType = "M2"
 
-const UomtypeM3 UOMType = "M3"
+const UOMTypeM3 UOMType = "M3"
 
-const UomtypeBm3 UOMType = "BM3"
+const UOMTypeBm3 UOMType = "BM3"
 
-const UomtypeNm3 UOMType = "NM3"
+const UOMTypeNm3 UOMType = "NM3"
 
-const UomtypeBm3H UOMType = "BM3H"
+const UOMTypeBm3H UOMType = "BM3H"
 
-const UomtypeNm3H UOMType = "NM3H"
+const UOMTypeNm3H UOMType = "NM3H"
 
-const UomtypeKwhh UOMType = "KWHH"
+const UOMTypeKwhh UOMType = "KWHH"
 
-const UomtypePau UOMType = "PAU"
+const UOMTypePau UOMType = "PAU"
 
 type DateTimeS string
 

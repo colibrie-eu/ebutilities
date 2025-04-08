@@ -10,19 +10,19 @@ import (
 type CMRequest struct {
 	XMLNs string `xml:"xmlns,attr"`
 
-	XMLNs2 string `xml:"xmlns:ns2,attr"`
+	XMLNsCt string `xml:"xmlns:ct,attr"`
 
-	XMLName xml.Name `xml:"ns2:CMRequest"`
+	XMLName xml.Name `xml:"CMRequest"`
 
-	MarketParticipantDirectory MarketParticipantDirectory `xml:"ns2:MarketParticipantDirectory"`
+	MarketParticipantDirectory MarketParticipantDirectory `xml:"MarketParticipantDirectory"`
 
-	ProcessDirectory ProcessDirectory `xml:"ns2:ProcessDirectory"`
+	ProcessDirectory ProcessDirectory `xml:"ProcessDirectory"`
 }
 
 // XSD ComplexType declarations
 
 type MarketParticipantDirectory struct {
-	XMLName xml.Name `xml:"ns2:MarketParticipantDirectory"`
+	XMLName xml.Name
 
 	DocumentMode ct.DocumentMode `xml:"DocumentMode,attr"`
 
@@ -30,51 +30,51 @@ type MarketParticipantDirectory struct {
 
 	SchemaVersion string `xml:"SchemaVersion,attr"`
 
-	RoutingHeader ct.RoutingHeader `xml:"RoutingHeader"`
+	RoutingHeader ct.RoutingHeader `xml:"ct:RoutingHeader"`
 
-	Sector ct.Sector `xml:"Sector"`
+	Sector ct.Sector `xml:"ct:Sector"`
 
-	MessageCode ct.MessageCode `xml:"ns2:MessageCode"`
+	MessageCode ct.MessageCode `xml:"MessageCode"`
 }
 
 type ProcessDirectory struct {
-	XMLName xml.Name `xml:"ns2:ProcessDirectory"`
+	XMLName xml.Name
 
-	MessageID ct.GroupingID `xml:"MessageId"`
+	MessageID ct.GroupingID `xml:"ct:MessageId"`
 
-	ConversationID ct.GroupingID `xml:"ConversationId"`
+	ConversationID ct.GroupingID `xml:"ct:ConversationId"`
 
-	ProcessDate string `xml:"ns2:ProcessDate"`
+	ProcessDate string `xml:"ProcessDate"`
 
-	MeteringPoint ct.MeteringPoint `xml:"ns2:MeteringPoint"`
+	MeteringPoint *ct.MeteringPoint `xml:"MeteringPoint"`
 
-	CMRequestID ct.GroupingID `xml:"ns2:CMRequestId"`
+	CMRequestID ct.GroupingID `xml:"CMRequestId"`
 
-	ConsentID *ct.GroupingID `xml:"ns2:ConsentId"`
+	ConsentID *ct.GroupingID `xml:"ct:ConsentId"`
 
-	CMRequest ReqType `xml:"ns2:CMRequest"`
+	CMRequest ReqType `xml:"CMRequest"`
 }
 
 type ReqType struct {
 	XMLName xml.Name
 
-	ReqDatType ReqDatType `xml:"ns2:ReqDatType"`
+	ReqDatType ReqDatType `xml:"ReqDatType"`
 
-	DateFrom string `xml:"ns2:DateFrom"`
+	DateFrom string `xml:"DateFrom"`
 
-	DateTo string `xml:"ns2:DateTo"`
+	DateTo string `xml:"DateTo"`
 
-	MeteringIntervall MeteringIntervallType `xml:"ns2:MeteringIntervall"`
+	MeteringIntervall *MeteringIntervallType `xml:"MeteringIntervall"`
 
-	TransmissionCycle TransmissionCycle `xml:"ns2:TransmissionCycle"`
+	TransmissionCycle *TransmissionCycle `xml:"TransmissionCycle"`
 
-	ECID *ct.MeteringPoint `xml:"ECID"`
+	ECID *ct.MeteringPoint `xml:"ct:ECID"`
 
 	ECPartFact *ECPartFact `xml:"ECPartFact"`
 
 	ECShare *ECShare `xml:"ECShare"`
 
-	EnergyDirection EnergyDirection `xml:"ns2:EnergyDirection"`
+	EnergyDirection *EnergyDirection `xml:"EnergyDirection"`
 }
 
 type ReqDatParamType struct {

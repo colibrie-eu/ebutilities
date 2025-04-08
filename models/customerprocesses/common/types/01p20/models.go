@@ -22,29 +22,29 @@ type MarketParticipantDirectory struct {
 
 	Duplicate bool `xml:"Duplicate,attr"`
 
-	RoutingHeader RoutingHeader `xml:"RoutingHeader"`
+	RoutingHeader RoutingHeader `xml:"ct:RoutingHeader"`
 
-	Sector Sector `xml:"Sector"`
+	Sector Sector `xml:"ct:Sector"`
 }
 
 type ProcessDirectory struct {
 	XMLName xml.Name
 
-	MessageID GroupingID `xml:"MessageId"`
+	MessageID GroupingID `xml:"ct:MessageId"`
 
-	ConversationID GroupingID `xml:"ConversationId"`
+	ConversationID GroupingID `xml:"ct:ConversationId"`
 
 	ProcessDate string `xml:"ProcessDate"`
 
-	MeteringPoint MeteringPoint `xml:"MeteringPoint"`
+	MeteringPoint MeteringPoint `xml:"ct:MeteringPoint"`
 }
 
 type ProcessDirectoryS struct {
 	XMLName xml.Name
 
-	MessageID GroupingID `xml:"MessageId"`
+	MessageID GroupingID `xml:"ct:MessageId"`
 
-	ConversationID GroupingID `xml:"ConversationId"`
+	ConversationID GroupingID `xml:"ct:ConversationId"`
 }
 
 type RoutingAddress struct {
@@ -52,23 +52,23 @@ type RoutingAddress struct {
 
 	AddressType AddressType `xml:"AddressType,attr"`
 
-	MessageAddress MessageAddress `xml:",any"`
+	MessageAddress MessageAddress `xml:"ct:MessageAddress"`
 }
 
 type RoutingHeader struct {
 	XMLName xml.Name
 
-	Sender RoutingAddress `xml:"Sender"`
+	Sender RoutingAddress `xml:"ct:Sender"`
 
-	Receiver RoutingAddress `xml:"Receiver"`
+	Receiver RoutingAddress `xml:"ct:Receiver"`
 
-	DocumentCreationDateTime string `xml:"DocumentCreationDateTime"`
+	DocumentCreationDateTime string `xml:"ct:DocumentCreationDateTime"`
 }
 
 type VerificationDocument struct {
 	XMLName xml.Name
 
-	Docnumber Docnumber `xml:",any"`
+	DOCNumber DOCNumber `xml:",any"`
 }
 
 // XSD SimpleType declarations
@@ -87,7 +87,7 @@ type DateTimeS string
 
 type DateTimeU string
 
-type Docnumber string
+type DOCNumber string
 
 type DocumentMode string
 

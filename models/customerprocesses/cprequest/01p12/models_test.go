@@ -53,8 +53,8 @@ func TestRequestPT(t *testing.T) {
 func assertRequestPT(t *testing.T, result cprequest.CPRequest) {
 	t.Helper()
 
-	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20", result.XMLNs)
-	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/cprequest/01p12", result.XMLNs2)
+	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/cprequest/01p12", result.XMLNs)
+	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20", result.XMLNsCt)
 	assert.Equal(t, "PROD", string(result.MarketParticipantDirectory.DocumentMode))
 	assert.False(t, result.MarketParticipantDirectory.Duplicate)
 	assert.Equal(t, "01.12", result.MarketParticipantDirectory.SchemaVersion)
@@ -74,8 +74,8 @@ func assertRequestPT(t *testing.T, result cprequest.CPRequest) {
 	assert.Nil(t, result.ProcessDirectory.Extension.TransmissionCycle)
 	assert.Nil(t, result.ProcessDirectory.Extension.MeteringIntervall)
 	assert.Nil(t, result.ProcessDirectory.Extension.LoadProfileType)
-	assert.Equal(t, "2024-05-01T00:00:00+02:00", string(result.ProcessDirectory.Extension.DateTimeFrom))
-	assert.Equal(t, "2024-05-31T00:00:00+02:00", string(result.ProcessDirectory.Extension.DateTimeTo))
+	assert.Equal(t, "2024-05-01T00:00:00+02:00", string(*result.ProcessDirectory.Extension.DateTimeFrom))
+	assert.Equal(t, "2024-05-31T00:00:00+02:00", string(*result.ProcessDirectory.Extension.DateTimeTo))
 	assert.Nil(t, result.ProcessDirectory.Extension.DisconnectionReason)
 	assert.Nil(t, result.ProcessDirectory.Extension.EmailCustomer)
 	assert.False(t, result.ProcessDirectory.Extension.AssumptionOfCosts)

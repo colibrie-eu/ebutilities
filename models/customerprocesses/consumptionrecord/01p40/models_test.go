@@ -53,8 +53,8 @@ func TestDataCRMSG(t *testing.T) {
 func assertDataCRMSG(t *testing.T, result consumptionrecord.ConsumptionRecord) {
 	t.Helper()
 
-	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20", result.XMLNs)
-	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/consumptionrecord/01p40", result.XMLNs2)
+	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/consumptionrecord/01p40", result.XMLNs)
+	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20", result.XMLNsCt)
 	assert.Equal(t, "PROD", string(result.MarketParticipantDirectory.DocumentMode))
 	assert.False(t, result.MarketParticipantDirectory.Duplicate)
 	assert.Equal(t, "01.40", result.MarketParticipantDirectory.SchemaVersion)
@@ -76,8 +76,8 @@ func assertDataCRMSG(t *testing.T, result consumptionrecord.ConsumptionRecord) {
 	assert.Equal(t, "2024-04-01T00:00:00+02:00", string(result.ProcessDirectory.Energy[0].MeteringPeriodEnd))
 	assert.Equal(t, 2972, int(result.ProcessDirectory.Energy[0].NumberOfMeteringIntervall))
 	assert.Equal(t, "QH", string(result.ProcessDirectory.Energy[0].MeteringIntervall))
-	assert.Equal(t, "2024-03-01T00:00:00+01:00", string(result.ProcessDirectory.Energy[0].EnergyData[0].Ep[0].DTF))
-	assert.Equal(t, "2024-03-01T00:15:00+01:00", string(result.ProcessDirectory.Energy[0].EnergyData[0].Ep[0].DTT))
-	assert.Equal(t, "L1", string(result.ProcessDirectory.Energy[0].EnergyData[0].Ep[0].MM))
-	assert.InEpsilon(t, 0.003, float64(result.ProcessDirectory.Energy[0].EnergyData[0].Ep[0].BQ), 0.0001)
+	assert.Equal(t, "2024-03-01T00:00:00+01:00", string(result.ProcessDirectory.Energy[0].EnergyData[0].EP[0].DTF))
+	assert.Equal(t, "2024-03-01T00:15:00+01:00", string(result.ProcessDirectory.Energy[0].EnergyData[0].EP[0].DTT))
+	assert.Equal(t, "L1", string(result.ProcessDirectory.Energy[0].EnergyData[0].EP[0].MM))
+	assert.InEpsilon(t, 0.003, float64(result.ProcessDirectory.Energy[0].EnergyData[0].EP[0].BQ), 0.0001)
 }

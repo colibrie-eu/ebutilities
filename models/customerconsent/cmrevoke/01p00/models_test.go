@@ -53,8 +53,8 @@ func TestRevokeCCMC(t *testing.T) {
 func assertRevokeCCMC(t *testing.T, result cmrevoke.CMRevoke) {
 	t.Helper()
 
-	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20", result.XMLNs)
-	assert.Equal(t, "http://www.ebutilities.at/schemata/customerconsent/cmrevoke/01p00", result.XMLNs2)
+	assert.Equal(t, "http://www.ebutilities.at/schemata/customerconsent/cmrevoke/01p00", result.XMLNs)
+	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20", result.XMLNsCt)
 	assert.Equal(t, "PROD", string(result.MarketParticipantDirectory.DocumentMode))
 	assert.False(t, result.MarketParticipantDirectory.Duplicate)
 	assert.Equal(t, "01.00", result.MarketParticipantDirectory.SchemaVersion)
@@ -70,5 +70,5 @@ func assertRevokeCCMC(t *testing.T, result cmrevoke.CMRevoke) {
 	assert.Equal(t, "EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", string(result.ProcessDirectory.ConsentID))
 	assert.Equal(t, "EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", string(result.ProcessDirectory.MeteringPoint))
 	assert.Equal(t, "2023-08-22", result.ProcessDirectory.ConsentEnd)
-	assert.Equal(t, "Aufhebung durch Kunden", string(result.ProcessDirectory.Reason))
+	assert.Equal(t, "Aufhebung durch Kunden", string(*result.ProcessDirectory.Reason))
 }

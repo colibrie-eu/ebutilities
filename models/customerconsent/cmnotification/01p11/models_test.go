@@ -53,8 +53,8 @@ func TestResponseCCMO(t *testing.T) {
 func assertResponseCCMO(t *testing.T, result cmnotification.CMNotification) {
 	t.Helper()
 
-	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20", result.XMLNs)
-	assert.Equal(t, "http://www.ebutilities.at/schemata/customerconsent/cmnotification/01p11", result.XMLNs2)
+	assert.Equal(t, "http://www.ebutilities.at/schemata/customerconsent/cmnotification/01p11", result.XMLNs)
+	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20", result.XMLNsCt)
 	assert.Equal(t, "PROD", string(result.MarketParticipantDirectory.DocumentMode))
 	assert.False(t, result.MarketParticipantDirectory.Duplicate)
 	assert.Equal(t, "01.11", result.MarketParticipantDirectory.SchemaVersion)
