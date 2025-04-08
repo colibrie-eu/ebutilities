@@ -5,6 +5,7 @@ linters:
   disable:
     - depguard
     - musttag
+    - revive
     - wrapcheck
   enable:
     - asasalint
@@ -89,7 +90,6 @@ linters:
     - protogetter
     - reassign
     - recvcheck
-    - revive
     - rowserrcheck
     - sloglint
     - spancheck
@@ -98,7 +98,6 @@ linters:
     - stylecheck
     - tagalign
     - tagliatelle
-    - tenv
     - testableexamples
     - testifylint
     - testpackage
