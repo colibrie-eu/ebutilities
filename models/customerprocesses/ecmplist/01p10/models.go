@@ -8,6 +8,10 @@ import (
 )
 
 type ECMPList struct {
+	XMLNs string `xml:"xmlns,attr"`
+
+	XMLNsCt string `xml:"xmlns:ct,attr"`
+
 	XMLName xml.Name `xml:"ECMPList"`
 
 	MarketParticipantDirectory MarketParticipantDirectory `xml:"MarketParticipantDirectory"`
@@ -20,17 +24,17 @@ type ECMPList struct {
 type MarketParticipantDirectory struct {
 	XMLName xml.Name
 
-	SchemaVersion string `xml:"SchemaVersion,attr"`
-
 	DocumentMode ct.DocumentMode `xml:"DocumentMode,attr"`
 
 	Duplicate bool `xml:"Duplicate,attr"`
 
+	SchemaVersion string `xml:"SchemaVersion,attr"`
+
+	RoutingHeader ct.RoutingHeader `xml:"ct:RoutingHeader"`
+
+	Sector ct.Sector `xml:"ct:Sector"`
+
 	MessageCode ct.MessageCode `xml:"MessageCode"`
-
-	RoutingHeader ct.RoutingHeader `xml:"RoutingHeader"`
-
-	Sector ct.Sector `xml:"Sector"`
 }
 
 type ProcessDirectory struct {
@@ -56,7 +60,7 @@ type MPListData struct {
 
 	MeteringPoint ct.MeteringPoint `xml:"MeteringPoint"`
 
-	ConsentID ct.GroupingID `xml:"ConsentId"`
+	ConsentID *ct.GroupingID `xml:"ConsentId"`
 
 	MPTimeData []MPTimeData `xml:"MPTimeData"`
 }
@@ -72,13 +76,13 @@ type MPTimeData struct {
 
 	ECPartFact ECPartFact `xml:"ECPartFact"`
 
-	PlantCategory PlantCategory `xml:"PlantCategory"`
+	PlantCategory *PlantCategory `xml:"PlantCategory"`
 
 	DateActivate string `xml:"DateActivate"`
 
-	DateDeactivate string `xml:"DateDeactivate"`
+	DateDeactivate *string `xml:"DateDeactivate"`
 
-	ECShare ECShare `xml:"ECShare"`
+	ECShare *ECShare `xml:"ECShare"`
 
 	ECShC []ShareCalc `xml:"ECShC"`
 }
