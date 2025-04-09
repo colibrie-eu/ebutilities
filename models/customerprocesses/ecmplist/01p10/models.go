@@ -12,89 +12,89 @@ type ECMPList struct {
 
 	XMLNsCt string `xml:"xmlns:ct,attr"`
 
-	XMLName xml.Name `xml:"ECMPList"`
+	XMLName xml.Name `json:"-" xml:"ECMPList"`
 
-	MarketParticipantDirectory MarketParticipantDirectory `xml:"MarketParticipantDirectory"`
+	MarketParticipantDirectory MarketParticipantDirectory `json:"marketParticipantDirectory,omitempty" xml:"MarketParticipantDirectory"`
 
-	ProcessDirectory ProcessDirectory `xml:"ProcessDirectory"`
+	ProcessDirectory ProcessDirectory `json:"processDirectory,omitempty" xml:"ProcessDirectory"`
 }
 
 // XSD ComplexType declarations
 
 type MarketParticipantDirectory struct {
-	XMLName xml.Name
+	XMLName xml.Name `json:"-"`
 
-	DocumentMode ct.DocumentMode `xml:"DocumentMode,attr"`
+	DocumentMode ct.DocumentMode `json:"documentMode,omitempty" xml:"DocumentMode,attr"`
 
-	Duplicate bool `xml:"Duplicate,attr"`
+	Duplicate bool `json:"duplicate,omitempty" xml:"Duplicate,attr"`
 
-	SchemaVersion string `xml:"SchemaVersion,attr"`
+	SchemaVersion string `json:"schemaVersion,omitempty" xml:"SchemaVersion,attr"`
 
-	RoutingHeader ct.RoutingHeader `xml:"ct:RoutingHeader"`
+	RoutingHeader ct.RoutingHeader `json:"routingHeader,omitempty" xml:"ct:RoutingHeader"`
 
-	Sector ct.Sector `xml:"ct:Sector"`
+	Sector ct.Sector `json:"sector,omitempty" xml:"ct:Sector"`
 
-	MessageCode ct.MessageCode `xml:"MessageCode"`
+	MessageCode ct.MessageCode `json:"messageCode,omitempty" xml:"MessageCode"`
 }
 
 type ProcessDirectory struct {
-	XMLName xml.Name
+	XMLName xml.Name `json:"-"`
 
-	MessageID ct.GroupingID `xml:"MessageId"`
+	MessageID ct.GroupingID `json:"messageId,omitempty" xml:"MessageId"`
 
-	ConversationID ct.GroupingID `xml:"ConversationId"`
+	ConversationID ct.GroupingID `json:"conversationId,omitempty" xml:"ConversationId"`
 
-	ProcessDate string `xml:"ProcessDate"`
+	ProcessDate string `json:"processDate,omitempty" xml:"ProcessDate"`
 
-	ECID ct.MeteringPoint `xml:"ECID"`
+	ECID ct.MeteringPoint `json:"ecId,omitempty" xml:"ECID"`
 
-	ECType ECType `xml:"ECType"`
+	ECType ECType `json:"ecType,omitempty" xml:"ECType"`
 
-	ECDisModel ECDisModel `xml:"ECDisModel"`
+	ECDisModel ECDisModel `json:"ecDisModel,omitempty" xml:"ECDisModel"`
 
-	MPListData []MPListData `xml:"MPListData"`
+	MPListData []MPListData `json:"mpListData,omitempty" xml:"MPListData"`
 }
 
 type MPListData struct {
-	XMLName xml.Name
+	XMLName xml.Name `json:"-"`
 
-	MeteringPoint ct.MeteringPoint `xml:"MeteringPoint"`
+	MeteringPoint ct.MeteringPoint `json:"meteringPoint,omitempty" xml:"MeteringPoint"`
 
-	ConsentID *ct.GroupingID `xml:"ConsentId"`
+	ConsentID *ct.GroupingID `json:"consentId,omitempty" xml:"ConsentId"`
 
-	MPTimeData []MPTimeData `xml:"MPTimeData"`
+	MPTimeData []MPTimeData `json:"mpTimeData,omitempty" xml:"MPTimeData"`
 }
 
 type MPTimeData struct {
-	XMLName xml.Name
+	XMLName xml.Name `json:"-"`
 
-	DateFrom string `xml:"DateFrom"`
+	DateFrom string `json:"dateFrom,omitempty" xml:"DateFrom"`
 
-	DateTo string `xml:"DateTo"`
+	DateTo string `json:"dateTo,omitempty" xml:"DateTo"`
 
-	EnergyDirection EnergyDirection `xml:"EnergyDirection"`
+	EnergyDirection EnergyDirection `json:"energyDirection,omitempty" xml:"EnergyDirection"`
 
-	ECPartFact ECPartFact `xml:"ECPartFact"`
+	ECPartFact ECPartFact `json:"ecPartFact,omitempty" xml:"ECPartFact"`
 
-	PlantCategory *PlantCategory `xml:"PlantCategory"`
+	PlantCategory *PlantCategory `json:"plantCategory,omitempty" xml:"PlantCategory"`
 
-	DateActivate string `xml:"DateActivate"`
+	DateActivate string `json:"dateActivate,omitempty" xml:"DateActivate"`
 
-	DateDeactivate *string `xml:"DateDeactivate"`
+	DateDeactivate *string `json:"dateDeactivate,omitempty" xml:"DateDeactivate"`
 
-	ECShare *ECShare `xml:"ECShare"`
+	ECShare *ECShare `json:"ecShare,omitempty" xml:"ECShare"`
 
-	ECShC []ShareCalc `xml:"ECShC"`
+	ECShC []ShareCalc `json:"ecShC,omitempty" xml:"ECShC"`
 }
 
 type ShareCalc struct {
-	XMLName xml.Name
+	XMLName xml.Name `json:"-"`
 
-	DateFrom string `xml:"DateFrom"`
+	DateFrom string `json:"dateFrom,omitempty" xml:"DateFrom"`
 
-	DateTo string `xml:"DateTo"`
+	DateTo string `json:"dateTo,omitempty" xml:"DateTo"`
 
-	ECShareCalc ECShare `xml:"ECShareCalc"`
+	ECShareCalc ECShare `json:"ecShareCalc,omitempty" xml:"ECShareCalc"`
 }
 
 // XSD SimpleType declarations
