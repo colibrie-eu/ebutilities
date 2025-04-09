@@ -12,85 +12,85 @@ type ConsumptionRecord struct {
 
 	XMLNsCt string `xml:"xmlns:ct,attr"`
 
-	XMLName xml.Name `xml:"ConsumptionRecord"`
+	XMLName xml.Name `json:"-" xml:"ConsumptionRecord"`
 
-	MarketParticipantDirectory MarketParticipantDirectory `xml:"MarketParticipantDirectory"`
+	MarketParticipantDirectory MarketParticipantDirectory `json:"marketParticipantDirectory,omitempty" xml:"MarketParticipantDirectory"`
 
-	ProcessDirectory ProcessDirectory `xml:"ProcessDirectory"`
+	ProcessDirectory ProcessDirectory `json:"processDirectory,omitempty" xml:"ProcessDirectory"`
 }
 
 // XSD ComplexType declarations
 
 type MarketParticipantDirectory struct {
-	XMLName xml.Name
+	XMLName xml.Name `json:"-"`
 
-	DocumentMode ct.DocumentMode `xml:"DocumentMode,attr"`
+	DocumentMode ct.DocumentMode `json:"documentMode,omitempty" xml:"DocumentMode,attr"`
 
-	Duplicate bool `xml:"Duplicate,attr"`
+	Duplicate bool `json:"duplicate,omitempty" xml:"Duplicate,attr"`
 
-	SchemaVersion string `xml:"SchemaVersion,attr"`
+	SchemaVersion string `json:"schemaVersion,omitempty" xml:"SchemaVersion,attr"`
 
-	RoutingHeader ct.RoutingHeader `xml:"ct:RoutingHeader"`
+	RoutingHeader ct.RoutingHeader `json:"routingHeader,omitempty" xml:"ct:RoutingHeader"`
 
-	Sector ct.Sector `xml:"ct:Sector"`
+	Sector ct.Sector `json:"sector,omitempty" xml:"ct:Sector"`
 
-	MessageCode ct.MessageCode `xml:"MessageCode"`
+	MessageCode ct.MessageCode `json:"messageCode,omitempty" xml:"MessageCode"`
 }
 
 type ProcessDirectory struct {
-	XMLName xml.Name
+	XMLName xml.Name `json:"-"`
 
-	MessageID ct.GroupingID `xml:"ct:MessageId"`
+	MessageID ct.GroupingID `json:"messageId,omitempty" xml:"ct:MessageId"`
 
-	ConversationID ct.GroupingID `xml:"ct:ConversationId"`
+	ConversationID ct.GroupingID `json:"conversationId,omitempty" xml:"ct:ConversationId"`
 
-	ProcessDate string `xml:"ct:ProcessDate"`
+	ProcessDate string `json:"processDate,omitempty" xml:"ct:ProcessDate"`
 
-	ECID *ct.MeteringPoint `xml:"ct:ECID"`
+	ECID *ct.MeteringPoint `json:"ecId,omitempty" xml:"ct:ECID"`
 
-	DeliveryPoint *ct.MessageAddress `xml:"ct:DeliveryPoint"`
+	DeliveryPoint *ct.MessageAddress `json:"deliveryPoint,omitempty" xml:"ct:DeliveryPoint"`
 
-	MeteringPoint ct.MeteringPoint `xml:"ct:MeteringPoint"`
+	MeteringPoint ct.MeteringPoint `json:"meteringPoint,omitempty" xml:"ct:MeteringPoint"`
 
-	Energy []Energy `xml:"Energy"`
+	Energy []Energy `json:"energy,omitempty" xml:"Energy"`
 }
 
 type Energy struct {
-	XMLName xml.Name
+	XMLName xml.Name `json:"-"`
 
-	MeteringReason *MeteringReason `xml:"MeteringReason"`
+	MeteringReason *MeteringReason `json:"meteringReason,omitempty" xml:"MeteringReason"`
 
-	MeteringPeriodStart DateTimeU `xml:"MeteringPeriodStart"`
+	MeteringPeriodStart DateTimeU `json:"meteringPeriodStart,omitempty" xml:"MeteringPeriodStart"`
 
-	MeteringPeriodEnd DateTimeU `xml:"MeteringPeriodEnd"`
+	MeteringPeriodEnd DateTimeU `json:"meteringPeriodEnd,omitempty" xml:"MeteringPeriodEnd"`
 
-	MeteringIntervall MeteringIntervall `xml:"MeteringIntervall"`
+	MeteringIntervall MeteringIntervall `json:"meteringIntervall,omitempty" xml:"MeteringIntervall"`
 
-	NumberOfMeteringIntervall int64 `xml:"NumberOfMeteringIntervall"`
+	NumberOfMeteringIntervall int64 `json:"numberOfMeteringIntervall,omitempty" xml:"NumberOfMeteringIntervall"`
 
-	EnergyData []EnergyData `xml:"EnergyData"`
+	EnergyData []EnergyData `json:"energyData,omitempty" xml:"EnergyData"`
 }
 
 type EnergyData struct {
-	XMLName xml.Name
+	XMLName xml.Name `json:"-"`
 
-	MeterCode string `xml:"MeterCode,attr"`
+	MeterCode string `json:"meterCode,omitempty" xml:"MeterCode,attr"`
 
-	UOM UOMType `xml:"UOM,attr"`
+	UOM UOMType `json:"uom,omitempty" xml:"UOM,attr"`
 
-	EP []EnergyPosition `xml:",any"`
+	EP []EnergyPosition `json:"ep,omitempty" xml:",any"`
 }
 
 type EnergyPosition struct {
-	XMLName xml.Name
+	XMLName xml.Name `json:"-"`
 
-	DTF DateTimeU `xml:"DTF"`
+	DTF DateTimeU `json:"dtf,omitempty" xml:"DTF"`
 
-	DTT DateTimeU `xml:"DTT"`
+	DTT DateTimeU `json:"dtt,omitempty" xml:"DTT"`
 
-	MM MeteringMethod `xml:"MM"`
+	MM MeteringMethod `json:"mM,omitempty" xml:"MM"`
 
-	BQ BillingQuantity `xml:"BQ"`
+	BQ BillingQuantity `json:"bQ,omitempty" xml:"BQ"`
 }
 
 // XSD SimpleType declarations
