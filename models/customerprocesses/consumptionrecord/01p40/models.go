@@ -88,9 +88,9 @@ type EnergyPosition struct {
 
 	DTT DateTimeU `json:"dtt,omitempty" xml:"DTT"`
 
-	MM MeteringMethod `json:"mM,omitempty" xml:"MM"`
+	MM MeteringMethod `json:"mm,omitempty" xml:"MM"`
 
-	BQ BillingQuantity `json:"bQ,omitempty" xml:"BQ"`
+	BQ BillingQuantity `json:"bq,omitempty" xml:"BQ"`
 }
 
 // XSD SimpleType declarations
