@@ -84,13 +84,13 @@ type EnergyData struct {
 type EnergyPosition struct {
 	XMLName xml.Name `json:"-"`
 
-	DTF DateTimeU `json:"dtf,omitempty" xml:"DTF"`
+	DTF DateTimeU `json:"dtf" xml:"DTF"`
 
-	DTT DateTimeU `json:"dtt,omitempty" xml:"DTT"`
+	DTT DateTimeU `json:"dtt" xml:"DTT"`
 
-	MM MeteringMethod `json:"mm,omitempty" xml:"MM"`
+	MM MeteringMethod `json:"mm" xml:"MM"`
 
-	BQ BillingQuantity `json:"bq,omitempty" xml:"BQ"`
+	BQ BillingQuantity `json:"bq" xml:"BQ"`
 }
 
 // XSD SimpleType declarations
