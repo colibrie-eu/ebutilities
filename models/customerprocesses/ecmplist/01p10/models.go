@@ -14,9 +14,9 @@ type ECMPList struct {
 
 	XMLName xml.Name `json:"-" xml:"ECMPList"`
 
-	MarketParticipantDirectory MarketParticipantDirectory `json:"marketParticipantDirectory,omitempty" xml:"MarketParticipantDirectory"`
+	MarketParticipantDirectory MarketParticipantDirectory `db:"market_participant_directory" json:"marketParticipantDirectory,omitempty" xml:"MarketParticipantDirectory"`
 
-	ProcessDirectory ProcessDirectory `json:"processDirectory,omitempty" xml:"ProcessDirectory"`
+	ProcessDirectory ProcessDirectory `db:"process_directory" json:"processDirectory,omitempty" xml:"ProcessDirectory"`
 }
 
 // XSD ComplexType declarations
@@ -24,77 +24,79 @@ type ECMPList struct {
 type MarketParticipantDirectory struct {
 	XMLName xml.Name `json:"-"`
 
-	DocumentMode ct.DocumentMode `json:"documentMode,omitempty" xml:"DocumentMode,attr"`
+	DocumentMode ct.DocumentMode `db:"document_mode" json:"documentMode,omitempty" xml:"DocumentMode,attr"`
 
-	Duplicate bool `json:"duplicate,omitempty" xml:"Duplicate,attr"`
+	Duplicate bool `db:"duplicate" json:"duplicate,omitempty" xml:"Duplicate,attr"`
 
-	SchemaVersion string `json:"schemaVersion,omitempty" xml:"SchemaVersion,attr"`
+	SchemaVersion string `db:"schema_version" json:"schemaVersion,omitempty" xml:"SchemaVersion,attr"`
 
-	RoutingHeader ct.RoutingHeader `json:"routingHeader,omitempty" xml:"ct:RoutingHeader"`
+	RoutingHeader ct.RoutingHeader `db:"routing_header" json:"routingHeader,omitempty" xml:"ct:RoutingHeader"`
 
-	Sector ct.Sector `json:"sector,omitempty" xml:"ct:Sector"`
+	Sector ct.Sector `db:"sector" json:"sector,omitempty" xml:"ct:Sector"`
 
-	MessageCode ct.MessageCode `json:"messageCode,omitempty" xml:"MessageCode"`
+	MessageCode ct.MessageCode `db:"message_code" json:"messageCode,omitempty" xml:"MessageCode"`
 }
 
 type ProcessDirectory struct {
 	XMLName xml.Name `json:"-"`
 
-	MessageID ct.GroupingID `json:"messageId,omitempty" xml:"MessageId"`
+	MessageID ct.GroupingID `db:"message_id" json:"messageId,omitempty" xml:"MessageId"`
 
-	ConversationID ct.GroupingID `json:"conversationId,omitempty" xml:"ConversationId"`
+	ConversationID ct.GroupingID `db:"conversation_id" json:"conversationId,omitempty" xml:"ConversationId"`
 
-	ProcessDate string `json:"processDate,omitempty" xml:"ProcessDate"`
+	ProcessDate string `db:"process_date" json:"processDate,omitempty" xml:"ProcessDate"`
 
-	ECID ct.MeteringPoint `json:"ecId,omitempty" xml:"ECID"`
+	ECID ct.MeteringPoint `db:"ec_id" json:"ecId,omitempty" xml:"ECID"`
 
-	ECType ECType `json:"ecType,omitempty" xml:"ECType"`
+	ECType ECType `db:"ec_type" json:"ecType,omitempty" xml:"ECType"`
 
-	ECDisModel ECDisModel `json:"ecDisModel,omitempty" xml:"ECDisModel"`
+	ECDisModel ECDisModel `db:"ec_dis_model" json:"ecDisModel,omitempty" xml:"ECDisModel"`
 
-	MPListData []MPListData `json:"mpListData,omitempty" xml:"MPListData"`
+	MPListData []MPListData `db:"mp_list_data" json:"mpListData,omitempty" xml:"MPListData"`
 }
 
 type MPListData struct {
 	XMLName xml.Name `json:"-"`
 
-	MeteringPoint ct.MeteringPoint `json:"meteringPoint,omitempty" xml:"MeteringPoint"`
+	MeteringPoint ct.MeteringPoint `db:"metering_point_id" json:"meteringPoint,omitempty" xml:"MeteringPoint"`
 
-	ConsentID *ct.GroupingID `json:"consentId,omitempty" xml:"ConsentId"`
+	ConsentID *ct.GroupingID `db:"consent_id" json:"consentId,omitempty" xml:"ConsentId"`
 
-	MPTimeData []MPTimeData `json:"mpTimeData,omitempty" xml:"MPTimeData"`
+	MPTimeData []MPTimeData `db:"mp_time_data" json:"mpTimeData,omitempty" xml:"MPTimeData"`
 }
 
 type MPTimeData struct {
 	XMLName xml.Name `json:"-"`
 
-	DateFrom string `json:"dateFrom,omitempty" xml:"DateFrom"`
+	ID int `db:"id" json:"-" xml:"-"`
 
-	DateTo string `json:"dateTo,omitempty" xml:"DateTo"`
+	DateFrom string `db:"date_from" json:"dateFrom,omitempty" xml:"DateFrom"`
 
-	EnergyDirection EnergyDirection `json:"energyDirection,omitempty" xml:"EnergyDirection"`
+	DateTo string `db:"date_to" json:"dateTo,omitempty" xml:"DateTo"`
 
-	ECPartFact ECPartFact `json:"ecPartFact,omitempty" xml:"ECPartFact"`
+	EnergyDirection EnergyDirection `db:"energy_direction" json:"energyDirection,omitempty" xml:"EnergyDirection"`
 
-	PlantCategory *PlantCategory `json:"plantCategory,omitempty" xml:"PlantCategory"`
+	ECPartFact ECPartFact `db:"ec_part_fact" json:"ecPartFact,omitempty" xml:"ECPartFact"`
 
-	DateActivate string `json:"dateActivate,omitempty" xml:"DateActivate"`
+	PlantCategory *PlantCategory `db:"plant_category" json:"plantCategory,omitempty" xml:"PlantCategory"`
 
-	DateDeactivate *string `json:"dateDeactivate,omitempty" xml:"DateDeactivate"`
+	DateActivate string `db:"date_activate" json:"dateActivate,omitempty" xml:"DateActivate"`
 
-	ECShare *ECShare `json:"ecShare,omitempty" xml:"ECShare"`
+	DateDeactivate *string `db:"date_deactivate" json:"dateDeactivate,omitempty" xml:"DateDeactivate"`
 
-	ECShC []ShareCalc `json:"ecShC,omitempty" xml:"ECShC"`
+	ECShare *ECShare `db:"ec_share" json:"ecShare,omitempty" xml:"ECShare"`
+
+	ECShC []ShareCalc `db:"ec_sh_c" json:"ecShC,omitempty" xml:"ECShC"`
 }
 
 type ShareCalc struct {
 	XMLName xml.Name `json:"-"`
 
-	DateFrom string `json:"dateFrom,omitempty" xml:"DateFrom"`
+	DateFrom string `db:"date_from" json:"dateFrom,omitempty" xml:"DateFrom"`
 
-	DateTo string `json:"dateTo,omitempty" xml:"DateTo"`
+	DateTo string `db:"date_to" json:"dateTo,omitempty" xml:"DateTo"`
 
-	ECShareCalc ECShare `json:"ecShareCalc,omitempty" xml:"ECShareCalc"`
+	ECShareCalc ECShare `db:"ec_share_calc" json:"ecShareCalc,omitempty" xml:"ECShareCalc"`
 }
 
 // XSD SimpleType declarations
