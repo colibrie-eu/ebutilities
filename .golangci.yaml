@@ -1,4 +1,5 @@
 ---
+version: "2"
 run:
   timeout: 5m
 linters:
@@ -23,7 +24,6 @@ linters:
     - dupword
     - durationcheck
     - err113
-    - errcheck
     - errchkjson
     - errname
     - errorlint
@@ -34,7 +34,6 @@ linters:
     - forbidigo
     - forcetypeassert
     - funlen
-    - gci
     - ginkgolinter
     - gocheckcompilerdirectives
     - gochecknoglobals
@@ -46,22 +45,16 @@ linters:
     - gocyclo
     - godot
     - godox
-    - gofmt
-    - gofumpt
     - goheader
-    - goimports
     - gomoddirectives
     - gomodguard
     - goprintffuncname
     - gosec
-    - gosimple
     - gosmopolitan
-    - govet
     - grouper
     - iface
     - importas
     - inamedparam
-    - ineffassign
     - interfacebloat
     - intrange
     - ireturn
@@ -95,7 +88,6 @@ linters:
     - spancheck
     - sqlclosecheck
     - staticcheck
-    - stylecheck
     - tagalign
     - tagliatelle
     - testableexamples
@@ -105,7 +97,6 @@ linters:
     - tparallel
     - unconvert
     - unparam
-    - unused
     - usestdlibvars
     - usetesting
     - varnamelen
@@ -113,6 +104,29 @@ linters:
     - whitespace
     - wsl
     - zerologlint
-linters-settings:
-  lll:
-    line-length: 180
+  settings:
+    lll:
+      line-length: 180
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+    - gofmt
+    - gofumpt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
