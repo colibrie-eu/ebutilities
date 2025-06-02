@@ -30,6 +30,15 @@
                 <ECPartFact>100</ECPartFact>
                 <PlantCategory>SONNE</PlantCategory>
                 <DateActivate>2022-11-01</DateActivate>
+                <DateDeactivate>2022-12-17</DateDeactivate>
+            </MPTimeData>
+            <MPTimeData>
+                <DateFrom>2022-12-18</DateFrom>
+                <DateTo>9999-12-31</DateTo>
+                <EnergyDirection>GENERATION</EnergyDirection>
+                <ECPartFact>100</ECPartFact>
+                <PlantCategory>SONNE</PlantCategory>
+                <DateActivate>2022-12-18</DateActivate>
             </MPTimeData>
         </MPListData>
         <MPListData>

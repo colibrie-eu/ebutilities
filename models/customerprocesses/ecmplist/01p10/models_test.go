@@ -53,6 +53,8 @@ func TestResult(t *testing.T) {
 func assertResult(t *testing.T, result ecmplist.ECMPList) {
 	t.Helper()
 
+	dateDeactivate := "2022-12-17"
+
 	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/ecmplist/01p10", result.XMLNs)
 	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20", result.XMLNsCt)
 	assert.Equal(t, "PROD", string(result.MarketParticipantDirectory.DocumentMode))
@@ -79,6 +81,7 @@ func assertResult(t *testing.T, result ecmplist.ECMPList) {
 	assert.InEpsilon(t, 100, float64(result.ProcessDirectory.MPListData[0].MPTimeData[0].ECPartFact), 0.0001)
 	assert.Equal(t, ecmplist.PlantCategory("SONNE"), *result.ProcessDirectory.MPListData[0].MPTimeData[0].PlantCategory)
 	assert.Equal(t, "2022-11-01", result.ProcessDirectory.MPListData[0].MPTimeData[0].DateActivate)
+	assert.Equal(t, &dateDeactivate, result.ProcessDirectory.MPListData[0].MPTimeData[0].DateDeactivate)
 	assert.InEpsilon(t, 80, float64(*result.ProcessDirectory.MPListData[1].MPTimeData[0].ECShare), 0.0001)
 	assert.Equal(t, "2022-11-15", result.ProcessDirectory.MPListData[1].MPTimeData[0].ECShC[0].DateFrom)
 	assert.Equal(t, "2022-11-30", result.ProcessDirectory.MPListData[1].MPTimeData[0].ECShC[0].DateTo)
