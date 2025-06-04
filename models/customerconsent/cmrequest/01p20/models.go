@@ -68,7 +68,7 @@ type ReqType struct {
 
 	TransmissionCycle *TransmissionCycle `xml:"TransmissionCycle"`
 
-	ECID *ct.MeteringPoint `xml:"ct:ECID"`
+	ECID *ct.MeteringPoint `xml:"ECID"`
 
 	ECPartFact *ECPartFact `xml:"ECPartFact"`
 
