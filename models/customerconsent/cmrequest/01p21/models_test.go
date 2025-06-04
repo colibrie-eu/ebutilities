@@ -5,7 +5,7 @@ import (
 	"encoding/xml"
 	"testing"
 
-	cmrequest "github.com/colibrie-eu/ebutilities/models/customerconsent/cmrequest/01p20"
+	cmrequest "github.com/colibrie-eu/ebutilities/models/customerconsent/cmrequest/01p21"
 	"github.com/colibrie-eu/ebutilities/utils"
 	"github.com/mantyr/xmlutils"
 	"github.com/stretchr/testify/assert"
@@ -53,7 +53,7 @@ func TestRequestCCMO(t *testing.T) {
 func assertRequestCCMO(t *testing.T, result cmrequest.CMRequest) {
 	t.Helper()
 
-	assert.Equal(t, "http://www.ebutilities.at/schemata/customerconsent/cmrequest/01p20", result.XMLNs)
+	assert.Equal(t, "http://www.ebutilities.at/schemata/customerconsent/cmrequest/01p21", result.XMLNs)
 	assert.Equal(t, "http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20", result.XMLNsCt)
 	assert.Equal(t, "PROD", string(result.MarketParticipantDirectory.DocumentMode))
 	assert.False(t, result.MarketParticipantDirectory.Duplicate)
@@ -73,7 +73,7 @@ func assertRequestCCMO(t *testing.T, result cmrequest.CMRequest) {
 	assert.Nil(t, result.ProcessDirectory.ConsentID)
 	assert.Equal(t, "ECProfileData", string(result.ProcessDirectory.CMRequest.ReqDatType))
 	assert.Equal(t, "2024-05-01", result.ProcessDirectory.CMRequest.DateFrom)
-	assert.Equal(t, "9999-12-31", result.ProcessDirectory.CMRequest.DateTo)
+	assert.Equal(t, "9999-12-31", *result.ProcessDirectory.CMRequest.DateTo)
 	assert.Equal(t, "QH", string(*result.ProcessDirectory.CMRequest.MeteringIntervall))
 	assert.Equal(t, "D", string(*result.ProcessDirectory.CMRequest.TransmissionCycle))
 	assert.Nil(t, result.ProcessDirectory.CMRequest.ECID)

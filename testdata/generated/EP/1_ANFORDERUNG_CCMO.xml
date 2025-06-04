@@ -1,5 +1,5 @@
-<CMRequest xmlns="http://www.ebutilities.at/schemata/customerconsent/cmrequest/01p20" xmlns:ct="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20">
-	<MarketParticipantDirectory xmlns="http://www.ebutilities.at/schemata/customerconsent/cmrequest/01p20" DocumentMode="PROD" Duplicate="false" SchemaVersion="01.20">
+<CMRequest xmlns="http://www.ebutilities.at/schemata/customerconsent/cmrequest/01p21" xmlns:ct="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20">
+	<MarketParticipantDirectory xmlns="http://www.ebutilities.at/schemata/customerconsent/cmrequest/01p21" DocumentMode="PROD" Duplicate="false" SchemaVersion="01.20">
 		<RoutingHeader xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20">
 			<Sender xmlns="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20" AddressType="ECNumber">
 				<ct:MessageAddress>EP1XXXXX</ct:MessageAddress>
@@ -12,13 +12,13 @@
 		<ct:Sector>01</ct:Sector>
 		<MessageCode>ANFORDERUNG_CCMO</MessageCode>
 	</MarketParticipantDirectory>
-	<ProcessDirectory xmlns="http://www.ebutilities.at/schemata/customerconsent/cmrequest/01p20">
+	<ProcessDirectory xmlns="http://www.ebutilities.at/schemata/customerconsent/cmrequest/01p21">
 		<ct:MessageId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ct:MessageId>
 		<ct:ConversationId>EPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ct:ConversationId>
 		<ProcessDate>2024-04-15</ProcessDate>
 		<MeteringPoint>ATXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</MeteringPoint>
 		<CMRequestId>NYMV3L3I</CMRequestId>
-		<CMRequest xmlns="http://www.ebutilities.at/schemata/customerconsent/cmrequest/01p20">
+		<CMRequest xmlns="http://www.ebutilities.at/schemata/customerconsent/cmrequest/01p21">
 			<ReqDatType>ECProfileData</ReqDatType>
 			<DateFrom>2024-05-01</DateFrom>
 			<DateTo>9999-12-31</DateTo>

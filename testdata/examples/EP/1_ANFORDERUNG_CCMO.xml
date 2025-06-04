@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<CMRequest xmlns="http://www.ebutilities.at/schemata/customerconsent/cmrequest/01p20" xmlns:ct="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20">
+<CMRequest xmlns="http://www.ebutilities.at/schemata/customerconsent/cmrequest/01p21" xmlns:ct="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20">
 	<MarketParticipantDirectory DocumentMode="PROD" Duplicate="false" SchemaVersion="01.20">
 		<ct:RoutingHeader>
 			<ct:Sender AddressType="ECNumber">
