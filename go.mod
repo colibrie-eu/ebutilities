@@ -1,6 +1,6 @@
 module github.com/colibrie-eu/ebutilities
 
-go 1.23.5
+go 1.24.3
 
 require (
 	github.com/mantyr/xmlutils v1.0.0
