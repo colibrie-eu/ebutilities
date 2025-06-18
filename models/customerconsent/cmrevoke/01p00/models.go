@@ -12,45 +12,45 @@ type CMRevoke struct {
 
 	XMLNsCt string `xml:"xmlns:ct,attr"`
 
-	XMLName xml.Name `xml:"CMRevoke"`
+	XMLName xml.Name `json:"-" xml:"CMRevoke"`
 
-	MarketParticipantDirectory MarketParticipantDirectory `xml:"MarketParticipantDirectory"`
+	MarketParticipantDirectory MarketParticipantDirectory `db:"market_participant_directory" json:"marketParticipantDirectory" xml:"MarketParticipantDirectory"`
 
-	ProcessDirectory ProcessDirectory `xml:"ProcessDirectory"`
+	ProcessDirectory ProcessDirectory `db:"process_directory" json:"processDirectory" xml:"ProcessDirectory"`
 }
 
 // XSD ComplexType declarations
 
 type MarketParticipantDirectory struct {
-	XMLName xml.Name
+	XMLName xml.Name `json:"-"`
 
-	DocumentMode ct.DocumentMode `xml:"DocumentMode,attr"`
+	DocumentMode ct.DocumentMode `db:"document_mode" json:"documentMode,omitempty" xml:"DocumentMode,attr"`
 
-	Duplicate bool `xml:"Duplicate,attr"`
+	Duplicate bool `db:"duplicate" json:"duplicate,omitempty" xml:"Duplicate,attr"`
 
-	SchemaVersion string `xml:"SchemaVersion,attr"`
+	SchemaVersion string `db:"schema_version" json:"schemaVersion,omitempty" xml:"SchemaVersion,attr"`
 
-	RoutingHeader ct.RoutingHeader `xml:"ct:RoutingHeader"`
+	RoutingHeader ct.RoutingHeader `db:"routing_header" json:"routingHeader" xml:"ct:RoutingHeader"`
 
-	Sector ct.Sector `xml:"ct:Sector"`
+	Sector ct.Sector `db:"sector" json:"sector,omitempty" xml:"ct:Sector"`
 
-	MessageCode string `xml:"MessageCode"`
+	MessageCode string `db:"message_code" json:"messageCode,omitempty" xml:"MessageCode"`
 }
 
 type ProcessDirectory struct {
-	XMLName xml.Name
+	XMLName xml.Name `json:"-"`
 
-	MessageID ct.GroupingID `xml:"ct:MessageId"`
+	MessageID ct.GroupingID `db:"message_id" json:"messageId,omitempty" xml:"ct:MessageId"`
 
-	ConversationID ct.GroupingID `xml:"ct:ConversationId"`
+	ConversationID ct.GroupingID `db:"conversation_id" json:"conversationId,omitempty" xml:"ct:ConversationId"`
 
-	ConsentID ct.GroupingID `xml:"ConsentId"`
+	ConsentID ct.GroupingID `db:"consent_id" json:"consentId,omitempty" xml:"ConsentId"`
 
-	MeteringPoint ct.MeteringPoint `xml:"MeteringPoint"`
+	MeteringPoint ct.MeteringPoint `db:"metering_point" json:"meteringPoint,omitempty" xml:"MeteringPoint"`
 
-	ConsentEnd string `xml:"ConsentEnd"`
+	ConsentEnd string `db:"consent_end" json:"consentEnd,omitempty" xml:"ConsentEnd"`
 
-	Reason *ReasonType `xml:"Reason"`
+	Reason *ReasonType `db:"reason" json:"reason,omitempty" xml:"Reason"`
 }
 
 // XSD SimpleType declarations
