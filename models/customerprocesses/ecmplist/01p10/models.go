@@ -62,7 +62,7 @@ type MPListData struct {
 
 	ConsentID *ct.GroupingID `db:"consent_id" json:"consentId,omitempty" xml:"ConsentId"`
 
-	MPTimeData []MPTimeData `db:"mp_time_data" json:"mpTimeData,omitempty" xml:"MPTimeData"`
+	MPTimeData []MPTimeData `db:"mp_time_data" json:"mpTimeData" xml:"MPTimeData"`
 }
 
 type MPTimeData struct {
