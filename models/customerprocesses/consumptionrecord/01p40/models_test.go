@@ -21,7 +21,7 @@ func TestDataCRMSG(t *testing.T) {
 
 	filename := "4_DATEN_CRMSG.xml"
 
-	read, err := utils.ReadFile(ExamplesPath + filename)
+	read, err := utils.ReadFile(ExamplesPath+filename, 1)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -40,7 +40,7 @@ func TestDataCRMSG(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	read, err = utils.ReadFile(GeneratedPath + filename)
+	read, err = utils.ReadFile(GeneratedPath+filename, 1)
 	if err != nil {
 		t.Fatal(err)
 	}

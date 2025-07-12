@@ -21,7 +21,7 @@ func TestResult(t *testing.T) {
 
 	filename := "SENDEN_ECP.xml"
 
-	read, err := utils.ReadFile(ExamplesPath + filename)
+	read, err := utils.ReadFile(ExamplesPath+filename, 1)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -40,7 +40,7 @@ func TestResult(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	read, err = utils.ReadFile(GeneratedPath + filename)
+	read, err = utils.ReadFile(GeneratedPath+filename, 1)
 	if err != nil {
 		t.Fatal(err)
 	}
