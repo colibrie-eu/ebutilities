@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMNotification xmlns="http://www.ebutilities.at/schemata/customerconsent/cmnotification/01p12" xmlns:ct="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20">
+  <MarketParticipantDirectory DocumentMode="PROD" Duplicate="false" SchemaVersion="01.12">
+    <ct:RoutingHeader>
+      <ct:Sender AddressType="ECNumber">
+        <ct:MessageAddress>ATXXXXXX</ct:MessageAddress>
+      </ct:Sender>
+      <ct:Receiver AddressType="ECNumber">
+        <ct:MessageAddress>RCXXXXXX</ct:MessageAddress>
+      </ct:Receiver>
+      <ct:DocumentCreationDateTime>2025-07-16T14:45:30.3610520Z</ct:DocumentCreationDateTime>
+    </ct:RoutingHeader>
+    <ct:Sector>01</ct:Sector>
+    <MessageCode>ABLEHNUNG_ECON</MessageCode>
+  </MarketParticipantDirectory>
+  <ProcessDirectory>
+    <ct:MessageId>ATXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ct:MessageId>
+    <ct:ConversationId>RCXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ct:ConversationId>
+    <CMRequestId>RCXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</CMRequestId>
+    <ResponseData>
+      <MeteringPoint>ATXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</MeteringPoint>
+      <ResponseCode>86</ResponseCode>
+      <ResponseCode>188</ResponseCode>
+    </ResponseData>
+  </ProcessDirectory>
+</CMNotification>
