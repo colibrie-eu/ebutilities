@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CPNotification xmlns="http://www.ebutilities.at/schemata/customerprocesses/cpnotification/01p13" xmlns:ct="http://www.ebutilities.at/schemata/customerprocesses/common/types/01p20">
+  <MarketParticipantDirectory DocumentMode="PROD" Duplicate="false" SchemaVersion="01.13">
+    <ct:RoutingHeader>
+      <ct:Sender AddressType="ECNumber">
+        <ct:MessageAddress>ATXXXXXX</ct:MessageAddress>
+      </ct:Sender>
+      <ct:Receiver AddressType="ECNumber">
+        <ct:MessageAddress>RCXXXXXX</ct:MessageAddress>
+      </ct:Receiver>
+      <ct:DocumentCreationDateTime>2025-07-30T06:42:57.4683500Z</ct:DocumentCreationDateTime>
+    </ct:RoutingHeader>
+    <ct:Sector>01</ct:Sector>
+    <MessageCode>ANTWORT_PT</MessageCode>
+  </MarketParticipantDirectory>
+  <ProcessDirectory>
+    <ct:MessageId>ATXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ct:MessageId>
+    <ct:ConversationId>RCXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</ct:ConversationId>
+    <ResponseData>
+      <OriginalMessageID>RCXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</OriginalMessageID>
+      <ResponseCode>70</ResponseCode>
+    </ResponseData>
+  </ProcessDirectory>
+</CPNotification>
