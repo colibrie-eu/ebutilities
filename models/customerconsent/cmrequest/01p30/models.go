@@ -78,7 +78,7 @@ type ReqType struct {
 
 	EnergyDirection *EnergyDirection `db:"energy_direction" json:"energyDirection,omitempty" xml:"EnergyDirection"`
 
-	Purpose string `db:"purpose" json:"purpose,omitempty" xml:"Purpose"`
+	Purpose *string `db:"purpose" json:"purpose,omitempty" xml:"Purpose"`
 }
 
 type ReqDatParamType struct {
